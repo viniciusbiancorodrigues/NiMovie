@@ -23,7 +23,7 @@ class MovieAdapter (
         fun bindMovie(movie : Movie){
             itemView.movie_title.text = movie.tittle
             itemView.movie_release_date.text = movie.release
-            Picasso.with(itemView).load(IMAGE_BASE + movie.poster).into(itemView.movie_poster)
+            Picasso.get().load(IMAGE_BASE + movie.poster).into(itemView.movie_poster)
 
         }
     }

@@ -1,11 +1,17 @@
 package com.example.nimovies
 
+import android.icu.number.NumberFormatter.with
+import android.icu.number.NumberRangeFormatter.with
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.Glide.with
+import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions.with
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.with
 import com.example.nimovies.models.Movie
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.movie_item.view.*
 
 class MovieAdapter (
@@ -17,7 +23,7 @@ class MovieAdapter (
         fun bindMovie(movie : Movie){
             itemView.movie_title.text = movie.tittle
             itemView.movie_release_date.text = movie.release
-            Glide.with(itemView).load(IMAGE_BASE + movie.poster).into(itemView.movie_poster)
+            Picasso.with(itemView).load(IMAGE_BASE + movie.poster).into(itemView.movie_poster)
 
         }
     }
